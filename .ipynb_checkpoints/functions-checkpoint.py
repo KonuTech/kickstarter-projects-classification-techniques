@@ -185,11 +185,11 @@ def visualise_floats(dataframe, variables, target):
         res = stats.probplot(dataframe[column], plot=plt)
         fig = plt.figure()
         
-        target_column = pd.DataFrame(dataframe.iloc[:,-1])
-        test_output = pd.merge(target_column, dataframe[variables], left_index=True, right_index=True)
-        ax = sns.jointplot(x=column, y=target, data=test_output, kind='reg', marker="+", color="b")
-        ax.fig.suptitle("Scatter plot of " + str(column) + "vs. " + target + " before imputation")
-        plt.figure()
+#         target_column = pd.DataFrame(dataframe.iloc[:,-1])
+#         test_output = pd.merge(target_column, dataframe[variables], left_index=True, right_index=True)
+#         ax = sns.jointplot(x=column, y=target, data=test_output, kind='reg', marker="+", color="b")
+#         ax.fig.suptitle("Scatter plot of " + str(column) + "vs. " + target + " before imputation")
+#         plt.figure()
 
 def choose_imputer_and_visualise_floats(dataframe, variables, target, imputer=None, strategy=None, weights=None):
     """ 
