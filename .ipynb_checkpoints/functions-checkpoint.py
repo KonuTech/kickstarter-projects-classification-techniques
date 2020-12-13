@@ -14,12 +14,14 @@
 from sklearn.datasets import load_boston, load_iris, load_diabetes, load_digits
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import SimpleImputer, IterativeImputer, KNNImputer
-from sklearn.preprocessing import PolynomialFeatures, RobustScaler, StandardScaler
-from sklearn.model_selection import GridSearchCV
-from sklearn.linear_model import Ridge, LinearRegression, Lasso
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.preprocessing import PolynomialFeatures, RobustScaler, StandardScaler, OneHotEncoder
+from sklearn.model_selection import GridSearchCV, train_test_split, cross_val_score
+from sklearn.linear_model import Ridge, LinearRegression, Lasso, LogisticRegression
+from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier, GradientBoostingRegressor
 from sklearn.feature_selection import VarianceThreshold, SelectKBest, f_regression, SelectFromModel
-from sklearn.tree import ExtraTreeRegressor
+from sklearn.tree import ExtraTreeRegressor, DecisionTreeClassifier
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
 
 import os
 import pandas as pd
@@ -188,7 +190,8 @@ def visualise_floats(dataframe, variables, target):
         
 #         target_column = pd.DataFrame(dataframe.iloc[:,-1])
 #         test_output = pd.merge(target_column, dataframe[variables], left_index=True, right_index=True)
-#         ax = sns.jointplot(x=column, y=target, data=test_output, kind='reg', marker="+", color="b")
+        
+#         ax = sns.jointplot(x=column, y=target, data=dataframe, kind='reg', marker="+", color="b")
 #         ax.fig.suptitle("Scatter plot of " + str(column) + "vs. " + target + " before imputation")
 #         plt.figure()
 
