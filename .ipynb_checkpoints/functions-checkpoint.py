@@ -37,6 +37,7 @@ import warnings
 from IPython.display import Image
 # from patsy import PatsyModel, PatsyTransformer
 import itertools
+from numpy.polynomial.polynomial import polyfit
 
 
 warnings.filterwarnings('ignore')
