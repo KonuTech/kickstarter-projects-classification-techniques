@@ -1,1 +1,0 @@
-# kickstarter-projects-classification-techniques
