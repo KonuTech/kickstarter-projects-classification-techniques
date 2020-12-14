@@ -16,12 +16,15 @@ from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import SimpleImputer, IterativeImputer, KNNImputer
 from sklearn.preprocessing import PolynomialFeatures, RobustScaler, StandardScaler, OneHotEncoder
 from sklearn.model_selection import GridSearchCV, train_test_split, cross_val_score, StratifiedShuffleSplit
-from sklearn.linear_model import Ridge, LinearRegression, Lasso, LogisticRegression
-from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier, GradientBoostingRegressor
+from sklearn.linear_model import Ridge, LinearRegression, Lasso, LogisticRegression, RidgeClassifier, SGDClassifier
+from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier, GradientBoostingRegressor, GradientBoostingClassifier, ExtraTreesClassifier, BaggingClassifier
 from sklearn.feature_selection import VarianceThreshold, SelectKBest, f_regression, SelectFromModel
 from sklearn.tree import ExtraTreeRegressor, DecisionTreeClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
+from sklearn.metrics import confusion_matrix, classification_report, accuracy_score, precision_score, recall_score, roc_curve, precision_recall_curve, f1_score, roc_auc_score
+from sklearn.naive_bayes import MultinomialNB
+from xgboost import XGBClassifier
 
 import os
 import pandas as pd
@@ -40,7 +43,7 @@ from IPython.display import Image
 # from patsy import PatsyModel, PatsyTransformer
 import itertools
 from numpy.polynomial.polynomial import polyfit
-
+from random import randint
 
 warnings.filterwarnings('ignore')
 sns.set()
