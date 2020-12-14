@@ -15,7 +15,7 @@ from sklearn.datasets import load_boston, load_iris, load_diabetes, load_digits
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import SimpleImputer, IterativeImputer, KNNImputer
 from sklearn.preprocessing import PolynomialFeatures, RobustScaler, StandardScaler, OneHotEncoder
-from sklearn.model_selection import GridSearchCV, train_test_split, cross_val_score
+from sklearn.model_selection import GridSearchCV, train_test_split, cross_val_score, StratifiedShuffleSplit
 from sklearn.linear_model import Ridge, LinearRegression, Lasso, LogisticRegression
 from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier, GradientBoostingRegressor
 from sklearn.feature_selection import VarianceThreshold, SelectKBest, f_regression, SelectFromModel
